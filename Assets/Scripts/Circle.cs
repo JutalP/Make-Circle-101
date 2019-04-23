@@ -34,7 +34,8 @@ public class Circle : MonoBehaviour
         lineRenderer.positionCount = vertexCount;
         for (int i = 0; i < lineRenderer.positionCount; i++)
         {
-            Vector3 pos = new Vector3(radius * Mathf.Cos(theta), radius * Mathf.Sin(theta), 0f);
+            Vector3 pos = new Vector3(radius * Mathf.Cos(theta), 
+                radius * Mathf.Sin(theta), 0f);
             lineRenderer.SetPosition(i, pos);
             theta += deltaTheta;
         }
@@ -49,7 +50,8 @@ public class Circle : MonoBehaviour
         Vector3 oldPos = Vector3.zero;
         for (int i = 0; i < vertexCount + 1; i++)
         {
-            Vector3 pos = new Vector3(radius * Mathf.Cos(theta), radius * Mathf.Sin(theta), 0f);
+            Vector3 pos = new Vector3(radius * Mathf.Cos(theta), 
+                radius * Mathf.Sin(theta), 0f);
             Gizmos.DrawLine(oldPos, transform.position + pos);
             oldPos = transform.position + pos;
 
