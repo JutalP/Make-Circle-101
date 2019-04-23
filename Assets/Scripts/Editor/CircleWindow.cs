@@ -4,7 +4,7 @@ using UnityEngine;
 public class CircleWindow : EditorWindow
 {
     Circle MyCircle;
-    public float myVertexFloat;
+    public int myVertexFloat;
     public float myRadiusFloat;
 
     private void Awake()
@@ -20,9 +20,9 @@ public class CircleWindow : EditorWindow
 
     private void OnGUI()
     {
-        myVertexFloat = EditorGUILayout.Slider("VertexCount", MyCircle.vertexCount, 3, 40);
+        myVertexFloat = EditorGUILayout.IntSlider("VertexCount", MyCircle.vertexCount, 3, 40);
         myRadiusFloat = EditorGUILayout.Slider("Radius", MyCircle.radius, 1, 100);
         MyCircle.radius = myRadiusFloat;
-        //MyCircle.vertexCount = myVertexFloat;
+        MyCircle.vertexCount = myVertexFloat;
     }
 }
