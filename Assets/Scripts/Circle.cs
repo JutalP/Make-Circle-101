@@ -15,11 +15,14 @@ public class Circle : MonoBehaviour
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        SetupCircle();
     }
 
-    private void SetupCircle()
+    public void SetupCircle()
     {
+        if (!lineRenderer)
+        {
+            lineRenderer = GetComponent<LineRenderer>();
+        }
         lineRenderer.widthMultiplier = lineWidth;
 
         if (circleFillscreen)
